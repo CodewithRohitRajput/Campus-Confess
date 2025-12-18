@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Campus Confess - Client
+
+This is the frontend client for Campus Confess, built with Next.js.
+
+## Tech Stack
+
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **State Management:** React Context/Hooks
+- **Authentication:** NextAuth.js (or your auth solution)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+2. Create a `.env.local` file in the client directory:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+# Add other environment variables as needed
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+client/
+├── app/              # Next.js app directory
+├── components/       # React components
+├── lib/             # Utility functions
+├── public/          # Static assets
+└── styles/          # Global styles
+```
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Anonymous confession posting
+- Real-time updates
+- User authentication
+- Responsive design
+- Dark mode support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more detai
+Please read the main repository's contributing guidelines before submitting pull requests.
+
+## License
+
+This project is part of Campus Confess. See the main repository for license information.
