@@ -1,6 +1,7 @@
 {
     "build": {
-        "builder" : "NIXPACKS"
+        "builder" : "NIXPACKS",
+        "appDirectory" : "express_server/server"
     },
     "deploy" : {
         "startCommand" : "cd server && npm install && npm run dev"
