@@ -17,7 +17,7 @@ export default function College() {
 
     useEffect(() => {
         const getCollege = async () => {
-            const res = await fetch(`${process.env.BACKEND_URL}/college/get`, { method: "GET", credentials: "include" });
+            const res = await fetch(`${process.env.backend}/college/get`, { method: "GET", credentials: "include" });
             const data = await res.json();
             setName(data)
         }
