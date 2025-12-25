@@ -28,7 +28,7 @@ export default function Post(){
 
     useEffect(()=>{
         const getCollegeName = async () => {
-            const res = await fetch(`http://localhost:8000/college/getname/${collegeId}`);
+            const res = await fetch(`${process.env.BACKEND_URL}/college/getname/${collegeId}`);
             const data = await res.json();
             setName(data);
         }
@@ -41,7 +41,7 @@ export default function Post(){
             return;
         }
         
-        const res = await fetch(`http://localhost:8000/confession/${collegeId}/post` , {method : "POST" , credentials : "include", 
+        const res = await fetch(`${process.env.BACKEND_URL}/confession/${collegeId}/post` , {method : "POST" , credentials : "include", 
             headers : {"Content-Type" : "application/json"},
             body : JSON.stringify(confession)
         })

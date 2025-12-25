@@ -23,13 +23,13 @@ export default function CollegeId() {
 
     useEffect(() => {
         const getConfessions = async () => {
-            const res = await fetch(`http://localhost:8000/confession/${collegeId}/get`, { method: "GET", credentials: "include" });
+            const res = await fetch(`${process.env.BACKEND_URL}/confession/${collegeId}/get`, { method: "GET", credentials: "include" });
             const data = await res.json();
             setConfession(data.allConfessions);
         }
 
         const getCollegeName = async () => {
-            const res = await fetch(`http://localhost:8000/college/getname/${collegeId}`, { method: "GET" })
+            const res = await fetch(`${process.env.BACKEND_URL}/college/getname/${collegeId}`, { method: "GET" })
             const data = await res.json();
             setCollegeName(data);
         }

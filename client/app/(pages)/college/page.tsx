@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 import { Search, MessageCircle, TrendingUp, ArrowRight } from 'lucide-react';
 
+
 interface College {
     _id: string,
     collegeName: string;
@@ -16,7 +17,7 @@ export default function College() {
 
     useEffect(() => {
         const getCollege = async () => {
-            const res = await fetch('http://localhost:8000/college/get', { method: "GET", credentials: "include" });
+            const res = await fetch(`${process.env.BACKEND_URL}/college/get`, { method: "GET", credentials: "include" });
             const data = await res.json();
             setName(data)
         }
