@@ -1,19 +1,21 @@
 import express from "express"
 import cors from "cors"
-import connectDB from "./config/db.ts";
-import collegeRouter from "./routes/collegeRoute.ts"
-import confessionRouter from "./routes/confessionRoute.ts"
+import connectDB from "./config/db.js";
+import collegeRouter from "./routes/collegeRoute.js"
+import confessionRouter from "./routes/confessionRoute.js"
+import { connectRedis } from "./config/redis.js";
 const app = express();
 
 app.use(express.json());
 app.use(cors(
         {
-            origin : "https://campus-confess.vercel.app",
+            origin : ["https://campus-confess.vercel.app" , "http://localhost:3000"],
             credentials : true
         }
 ));
 
 await connectDB();
+await connectRedis();
 
 
 app.use('/college' , collegeRouter);

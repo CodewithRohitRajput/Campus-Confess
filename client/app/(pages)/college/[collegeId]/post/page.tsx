@@ -30,7 +30,7 @@ export default function Post(){
         const getCollegeName = async () => {
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/college/getname/${collegeId}`);
             const data = await res.json();
-            setName(data);
+            setName(data.name);
         }
         getCollegeName();
     },[])

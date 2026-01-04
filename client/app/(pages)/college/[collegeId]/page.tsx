@@ -31,7 +31,7 @@ export default function CollegeId() {
         const getCollegeName = async () => {
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/college/getname/${collegeId}`, { method: "GET" })
             const data = await res.json();
-            setCollegeName(data);
+            setCollegeName(data.name);
         }
         getCollegeName();
         getConfessions();
