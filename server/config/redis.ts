@@ -7,6 +7,11 @@ export const  connectRedis = async () =>{
         redisClient = createClient({
             url : process.env.REDIS_URL || 'redis://localhost:6379'
         })
+        if(!process.env.REDIS_URL){
+            console.log('redis is not connected env is not present');
+            redisClient = null;
+            return;
+        }
         redisClient.on("error" , (err)=>{
             console.error('redis facing issues...' , err);
         })
