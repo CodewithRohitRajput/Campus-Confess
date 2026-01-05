@@ -17,10 +17,13 @@
     "@types/express": "^5.0.6",
     "@types/mongoose": "^5.11.96",
     "bcrypt": "^6.0.0",
+    "cluster": "^0.7.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mongoose": "^9.0.1",
+    "os": "^0.1.2",
+    "process": "^0.11.10",
     "redis": "^5.10.0",
     "typescript": "^5.9.3"
   },
