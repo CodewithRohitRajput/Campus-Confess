@@ -4,19 +4,19 @@ import connectDB from "./config/db.js";
 import collegeRouter from "./routes/collegeRoute.js"
 import confessionRouter from "./routes/confessionRoute.js"
 import { connectRedis } from "./config/redis.js";
-import cluster from "cluster";
-import os from 'os'
-import process from "process";
+// import cluster from "cluster";
+// import os from 'os'
+// import process from "process";
 
 
-const cpuCores = os.cpus().length;
-console.log('cpu',cpuCores)
+// const cpuCores = os.cpus().length;
+// console.log('cpu',cpuCores)
 
-if(cluster.isPrimary){
-    for(let i=0; i<cpuCores;i++){
-        cluster.fork();
-    }
-}else{
+// if(cluster.isPrimary){
+//     for(let i=0; i<cpuCores;i++){
+//         cluster.fork();
+//     }
+// }else{
 
     
     const app = express();
@@ -29,8 +29,8 @@ if(cluster.isPrimary){
         }
     ));
     
-    await connectDB();
-    await connectRedis();
+     connectDB();
+     connectRedis();
     
     
     app.use('/college' , collegeRouter);
@@ -40,4 +40,4 @@ if(cluster.isPrimary){
         console.log(`server is running on port ${8000}`);
     })
     
-}
+// }
